@@ -19,9 +19,10 @@ print("My second var is: " + my_second_var)
 # this is called string concatenation. This can only be done on strings
 # different types can be used but only after being cast to a String type:
 print("My first var is: " + str(my_first_var))
-
-
-
+# for more complex strings you can use what's known as an F-string
+# which lets you use {} notation
+print(f"my first var is {my_first_var} and my second var is {my_second_var} and my third var is {my_third_var}")
+# note that with f-strings, you do not need to explicitly cast to a string type
 
 
 
