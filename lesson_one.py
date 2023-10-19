@@ -90,8 +90,3 @@ if 2 == 2 or 3 != 2:
 
 # this completes the first lesson.
 # please practice at https://codingbat.com/python warmup-1
-
-
-
-
-
