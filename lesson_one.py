@@ -1,5 +1,5 @@
 # lesson one: basic python
-# includes types, function creation/calls and loops, scope(LEGB Rule), logic statements
+# includes types, function creation/calls and loops, scope(LEGB Rule), logic statements, substrings
 # This lesson includes everything needed for warmup-1 problems on codingBat  https://codingbat.com/python
 import sys
 
@@ -87,6 +87,14 @@ if 2 == 2 and 3 != 2:
 
 if 2 == 2 or 3 != 2:
     print("This will print, as only one statement needs to be true")
+
+# substrings
+my_string = "Hello"
+sub_three = my_string[0:3]  # first number is inclusive, second number exclusive
+print(f"substring of hello[0:3] = {sub_three}")
+the_third_letter = my_string[2]  # creates a substring of the letter in selected location
+print(the_third_letter)
+print(my_string[-1])  # can also count backwards.  This will return the final letter
 
 # this completes the first lesson.
 # please practice at https://codingbat.com/python warmup-1
