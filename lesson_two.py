@@ -1,4 +1,4 @@
-import random # import for random number generation
+import random  # import for random number generation
 
 section = "******************************"
 print(section)
@@ -64,13 +64,4 @@ while random_number != the_number_five:
     print(f"This loop has run {has_looped} times")
     random_number = random.randint(1, 10)
 
-
 print(f"it took {has_looped} times for random_number to equal 5")
-
-
-
-
-
-
-
-
