@@ -5,6 +5,9 @@ print("Welcome to Rock Paper Scissors")
 # Globals
 game_history = []  # this will include a history of games played for statistics
 quit_game = False  # changing quit to true will end the game
+games_won = 0
+games_lost = 0
+win_percentage = 0.0
 
 
 def define_rules():
@@ -26,14 +29,90 @@ def find_user_choice():
         print("Please make a valid selection")
         find_user_choice()
 
+def view_statistics():
+    global game_history
+    global games_won
+    global games_lost
+    global win_percentage
+
+    for i in range(len(game_history)):
+        if game_history[i]['outcome'] == 'win':
+            games_won = games_won + 1
+        if game_history[i]['outcome'] == 'lose':
+            games_lost = games_lost + 1
+        win_percentage = games_won / len(game_history)
+        print(f"Your winning percentage is: {games_won / len(game_history)}")
+
+
+
+    print(f"You have played {len(game_history)} games  ")
+
+
+    print(game_history)
+
 
 def find_winner(user, bot):
+    global game_history
+    print(f"You picked {user} and the computer picked {bot}")
     if user == bot:
         game_history.append({
             "user_selected": user,
             "bot_selected": bot,
             "outcome": "tie"
         })
+        print("Tie")
+
+    elif user == 'rock':
+        if bot == 'paper':
+            game_history.append({
+                "user_selected": user,
+                "bot_selected": bot,
+                "outcome": "lose"
+            })
+            print("You lose")
+        else:
+            print("You win")
+            game_history.append({
+                "user_selected": user,
+                "bot_selected": bot,
+                "outcome": "win"
+            })
+
+    elif user == 'paper':
+        if bot == 'scissors':
+            print("You lose")
+            game_history.append({
+                "user_selected": user,
+                "bot_selected": bot,
+                "outcome": "lose"
+            })
+        else:
+            game_history.append({
+                "user_selected": user,
+                "bot_selected": bot,
+                "outcome": "win"
+            })
+            print("You win")
+
+    elif user == 'scissors':
+        if bot == 'rock':
+            game_history.append({
+                "user_selected": user,
+                "bot_selected": bot,
+                "outcome": "lose"
+            })
+            print("You lose")
+        else:
+            game_history.append({
+                "user_selected": user,
+                "bot_selected": bot,
+                "outcome": "win"
+            })
+            print("You Win")
+
+    view_statistics()
+
+
 
     if user == "rock" and bot == "scissors":
         game_history.append({
